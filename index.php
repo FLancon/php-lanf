@@ -10,24 +10,31 @@
     </header>
 
 <div class="row">
-
+        <!-- NAV-BAR -->
         <div class="col-3 p-5">
             <nav>
-                <button type="button" class="btn btn-outline-secondary btn-block"> Home </button>
+            <a href="index.php"><button type="button" class="btn btn-outline-secondary btn-block">Home</button>
+            </a>
+            <?php include 'includes/ul.inc.html';?>
             </nav>
         </div>
 
+        <!-- FORMULAIRE / AJOUT DONNÉES -->
         <div class="col-9 p-5">
             <section>
-                <button class="btn btn-primary text-white px-5" type="button">Ajouter des données</a></button>
-                <form>
-                    <?php include 'includes/form.inc.html';?>
-                </form>
-                </section>
-            
+                <a href="index.php?add"><button class="btn btn-primary text-white px-5" type="button">Ajouter des données
+                </button></a>
+                
+                <?php 
+                if(isset(($_GET['add'])))  {
+                    include 'includes/form.inc.html';
+                }
+                ?>
+            </section>
         </div>
 
 </div>
+
     <footer>
         <?php include 'includes/footer.inc.html';?>
     </footer>
