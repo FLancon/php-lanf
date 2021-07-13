@@ -19,8 +19,12 @@
 
         <div class="col-9 p-5">
             <section>
-                <button type="button" class="btn btn-primary text-white px-5">Ajouter des données</a>
-            </section>
+                <button class="btn btn-primary text-white px-5" type="button">Ajouter des données</a></button>
+                <form>
+                    <?php include 'includes/form.inc.html';?>
+                </form>
+                </section>
+            
         </div>
 
 </div>
