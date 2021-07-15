@@ -9,14 +9,14 @@
         <?php include 'includes/header.inc.html';?>
     </header>
 
-<div class="row">
+    <div class="row">
         <!-- NAV-BAR -->
-        <div class="col-3 p-5">
+         <div class="col-sm-3 p-3">
             <nav>
             <a href="index.php"><button type="button" class="btn btn-outline-secondary btn-block">Home</button>
             </a>
-            <?php 
-            
+
+            <?php
             session_start();
             if(!empty($_SESSION)) {
                 $table = $_SESSION['table'];
@@ -28,7 +28,7 @@
         </div>
 
         <!-- FORMULAIRE / AJOUT DONNÉES -->
-        <div class="col-9 p-5">
+        <div class="col-sm-9 p-3">
             <section>
                 
                 <?php 
@@ -86,7 +86,7 @@
                         echo "<h2 class='text-left'>Boucle</h2>  <br> <p>===> Lecture du tableau à l'aide d'une boucle foreach :</p>";
                         $i=0;
                         foreach ($table as $key => $value) {
-                            echo 'À la ligne N°' .$i ++. ' correspond à la clé "'. $key . '" et contient "' . $value . '".<br>';
+                            echo '<div>À la ligne N°' .$i ++. ' correspond à la clé "'. $key . '" et contient "' . $value . '".<br></div>';
                         }
                     }
 
@@ -95,7 +95,7 @@
                     function ReadTable($table) {
                         $i=0;
                         foreach ($table as $key => $value) 
-                        echo 'À la ligne N°' .$i ++. ' correspond à la clé "'. $key . '" et contient "' . $value . '".<br>';
+                        echo '<div>À la ligne N°' .$i ++. ' correspond à la clé "'. $key . '" et contient "' . $value . '".<br></div>';
                         }
                         readTable($table);
                     }
@@ -107,19 +107,16 @@
 
                     else  {
                         echo
-                        '<a href="index.php?add">
-                            <button type="button" class="btn btn-primary text-white px-5" type="button">Ajouter des données</button></a>';
+                        '<a href="index.php?add"> <button type="button" class="btn btn-primary text-white px-5 type="button">Ajouter des données</button></a>';
                     }
                 ?>
-                
-
             </section>
         </div>
-
-</div>
-
+    </div>
+    
     <footer>
         <?php include 'includes/footer.inc.html';?>
     </footer>
+
 </body>
 </html>
