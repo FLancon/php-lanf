@@ -32,6 +32,7 @@
             <section>
                 
                 <?php 
+                    // Envoi du formulaire dans Table
                     if(isset($_POST ["envoyer"])) {
                         $_SESSION['table']=[
                             'first_name'=>$_POST['first_name'],
@@ -100,11 +101,12 @@
                         readTable($table);
                     }
 
+                    // Suppression Session
                     elseif(isset($_GET['del']))  {
                         session_destroy();
                         echo '<h2>Les données ont bien été supprimées</h2>';
                     }
-
+                    // Affichage du bouton "Ajouter des données"
                     else  {
                         echo
                         '<a href="index.php?add"> <button type="button" class="btn btn-primary text-white px-5 type="button">Ajouter des données</button></a>';
@@ -113,7 +115,7 @@
             </section>
         </div>
     </div>
-    
+
     <footer>
         <?php include 'includes/footer.inc.html';?>
     </footer>
