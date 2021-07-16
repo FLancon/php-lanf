@@ -32,7 +32,7 @@
         <div class="col-sm-9 p-3">
             <section>
                 
-                <?php 
+                <?php
                     // Envoi du formulaire dans Table
                     if(isset($_POST ["envoyer"])) {
                         $_SESSION['table']=[
@@ -44,7 +44,7 @@
                         ];      
                         echo '<h2 class="text-center">Données sauvegardées</h2>';
                     }
-                    // Afficher le formulaire 
+                    // Afficher le formulaire
                     elseif(isset($_GET['add']))  {
                         include 'includes/form.inc.html';
                     }
