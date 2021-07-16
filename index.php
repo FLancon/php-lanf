@@ -13,7 +13,7 @@
         <!-- NAV-BAR -->
          <div class="col-sm-3 p-3">
             <nav>
-            <a href="index.php"><button type="button" class="btn btn-outline-secondary btn-block">Home</button>
+            <a href="index.php"><button type="button" class="btn btn-outline-secondary btn-block ml-3">Home</button>
             </a>
 
             <?php
