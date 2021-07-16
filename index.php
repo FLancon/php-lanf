@@ -10,12 +10,13 @@
     </header>
 
     <div class="row">
-        <!-- NAV-BAR -->
+        <!-- NAV-BAR (Left-hand Section)-->
          <div class="col-sm-3 p-3">
             <nav>
             <a href="index.php"><button type="button" class="btn btn-outline-secondary btn-block ml-3">Home</button>
             </a>
-
+            
+            <!-- Affichage du Menu à l'ouverture de Session -->
             <?php
             session_start();
             if(!empty($_SESSION)) {
@@ -27,7 +28,7 @@
             </nav>
         </div>
 
-        <!-- FORMULAIRE / AJOUT DONNÉES -->
+        <!-- FORMULAIRE / AJOUT DONNÉES (Right-hand Section) -->
         <div class="col-sm-9 p-3">
             <section>
                 
@@ -40,22 +41,21 @@
                             'age'=>$_POST['age'],
                             'size'=>$_POST['size'],
                             'situation'=>$_POST['situation']
-                        ];    
-                            
+                        ];      
                         echo '<h2 class="text-center">Données sauvegardées</h2>';
                     }
-
+                    // Afficher le formulaire 
                     elseif(isset($_GET['add']))  {
                         include 'includes/form.inc.html';
                     }
-
+                    // Section Menu "Débogage"
                     elseif(isset($_GET['debugging']))  {
                         echo "<h2 class='text-left'>Débogage</h2>  <br> <p>===> Lecture du tableau à l'aide de la fonction print_r()</p>";
                         echo "<pre>";
                         print_r($table);
                         echo "</pre>";
                     }
-
+                    // Section Menu "Concatenation"
                     elseif(isset($_GET['concatenation']))  {
                         // Titre de section
                         echo "<h2 class='text-left'>Concaténation<br></h2>";
@@ -82,7 +82,7 @@
                         echo '<h3>' .$table[first_name]. " " .$table[last_name].'<br></h3>
                         <p>' .$table[age]. ' ans, je mesure ' .$table[size]. ' et je fais partie des ' .$table[situation]. 's de la promo Simplon.<br></p>';;
                     }
-
+                    // Section Menu "Boucle"
                     elseif(isset($_GET['loop']))  {
                         echo "<h2 class='text-left'>Boucle</h2>  <br> <p>===> Lecture du tableau à l'aide d'une boucle foreach :</p>";
                         $i=0;
@@ -90,7 +90,7 @@
                             echo '<div>À la ligne N°' .$i ++. ' correspond à la clé "'. $key . '" et contient "' . $value . '".<br></div>';
                         }
                     }
-
+                    // Section Menu "function"
                     elseif(isset($_GET['function']))  {                 
                         echo "<h2 class='text-left'>Fonction</h2>  <br> <p>===> J'utilise ma fonction readTable() :</p>";
                     function ReadTable($table) {
